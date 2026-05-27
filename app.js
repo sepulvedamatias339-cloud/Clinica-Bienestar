@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 });
 
-// LOGIN
+// VALIDAR LOGIN
 app.post('/login', (req, res) => {
 
     const correo = req.body.correo;
@@ -40,6 +40,13 @@ app.get('/dashboard', (req, res) => {
     res.render('dashboard', {
         pacientes: pacientes
     });
+
+});
+
+// LOGOUT
+app.get('/logout', (req, res) => {
+
+    res.redirect('/');
 
 });
 
