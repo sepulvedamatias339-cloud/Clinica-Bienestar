@@ -1,6 +1,68 @@
-<a href="/agregar">Agregar usuario</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
 
-<table border="1">
+    <style>
+
+        body{
+            font-family: Arial;
+            margin:40px;
+            background:#f4f4f4;
+        }
+
+        h1{
+            color:#2e8b57;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            margin-top:20px;
+        }
+
+        th, td{
+            border:1px solid #ccc;
+            padding:10px;
+            text-align:center;
+        }
+
+        th{
+            background:#2e8b57;
+            color:white;
+        }
+
+        .btn{
+            background:#2e8b57;
+            color:white;
+            padding:10px 15px;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+        .eliminar{
+            background:red;
+            color:white;
+            padding:5px 10px;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>Pacientes Clínica Bienestar</h1>
+
+<a class="btn" href="/agregar">
+    Agregar Paciente
+</a>
+
+<br><br>
+
+<table>
 
 <tr>
     <th>ID</th>
@@ -9,21 +71,32 @@
     <th>Acciones</th>
 </tr>
 
-<% usuarios.forEach(usuario => { %>
+<% pacientes.forEach(function(paciente){ %>
 
 <tr>
 
-<td><%= usuario.id %></td>
-<td><%= usuario.nombre %></td>
-<td><%= usuario.correo %></td>
+    <td><%= paciente.id %></td>
 
-<td>
-    <a href="/editar/<%= usuario.id %>">Editar</a>
-    <a href="/eliminar/<%= usuario.id %>">Eliminar</a>
-</td>
+    <td><%= paciente.nombre %></td>
+
+    <td><%= paciente.correo %></td>
+
+    <td>
+
+        <a
+            class="eliminar"
+            href="/eliminar/<%= paciente.id %>"
+        >
+            Eliminar
+        </a>
+
+    </td>
 
 </tr>
 
 <% }) %>
 
 </table>
+
+</body>
+</html>

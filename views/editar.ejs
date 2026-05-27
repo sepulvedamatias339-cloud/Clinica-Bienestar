@@ -1,9 +1,35 @@
-<form action="/editar/<%= usuario.id %>" method="POST">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Paciente</title>
+</head>
+<body>
 
-    <input type="text" name="nombre" value="<%= usuario.nombre %>">
+<h1>Editar Paciente</h1>
 
-    <input type="email" name="correo" value="<%= usuario.correo %>">
+<form action="/editar/<%= paciente.id %>" method="POST">
 
-    <button type="submit">Actualizar</button>
+    <input
+        type="text"
+        name="nombre"
+        value="<%= paciente.nombre %>"
+    >
+
+    <br><br>
+
+    <input
+        type="email"
+        name="correo"
+        value="<%= paciente.correo %>"
+    >
+
+    <br><br>
+
+    <button type="submit">
+        Guardar Cambios
+    </button>
 
 </form>
+
+</body>
+</html>
