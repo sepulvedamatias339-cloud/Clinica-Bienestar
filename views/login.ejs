@@ -1,9 +1,93 @@
-<form action="/login" method="POST">
+<!DOCTYPE html>
+<html>
+<head>
 
-    <input type="email" name="correo" placeholder="Correo">
+    <title>Login</title>
 
-    <input type="password" name="password" placeholder="Contraseña">
+    <style>
 
-    <button type="submit">Ingresar</button>
+        body{
+            margin:0;
+            font-family:Arial;
+            background:#f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
 
-</form>
+        .login-box{
+
+            background:white;
+            padding:40px;
+            border-radius:10px;
+            width:300px;
+            box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+
+        }
+
+        h1{
+            text-align:center;
+            color:#2e8b57;
+        }
+
+        input{
+
+            width:100%;
+            padding:10px;
+            margin-top:10px;
+            margin-bottom:20px;
+            border:1px solid #ccc;
+            border-radius:5px;
+
+        }
+
+        button{
+
+            width:100%;
+            padding:10px;
+            background:#2e8b57;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+
+        }
+
+        button:hover{
+            background:#256f47;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="login-box">
+
+    <h1>Clínica Bienestar</h1>
+
+    <form action="/login" method="POST">
+
+        <input
+            type="email"
+            name="correo"
+            placeholder="Correo"
+        >
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+        >
+
+        <button type="submit">
+            Ingresar
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
